@@ -1,6 +1,7 @@
 package com.jimmystudio.movietime_service.repository;
 
 import java.util.Date;
+import java.util.Iterator;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -14,12 +15,12 @@ import com.jimmystudio.movietime_service.entity.Movie;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
 public class MovieRepositoryTest {
-
+ 
 	@Autowired
 	MovieRepository movieRepository;
 	
 	@Test
-	public void testMovieRepository(){
+	public void testSingleMovieRepository(){
 		
 		Assert.assertNotNull(movieRepository);
 		
@@ -36,20 +37,40 @@ public class MovieRepositoryTest {
 		Assert.assertNotNull(movie2);
 		Assert.assertEquals(movie2.getDescription(), movie.getDescription());
 		
-		Assert.assertEquals(1, movieRepository.findAll().spliterator().estimateSize());
+		
+		
+		Iterator<Movie> itr = movieRepository.findAll().iterator();
+		int count = 0;
+		while(itr.hasNext()){
+			itr.next();
+			count++;
+		}
+		
+		Assert.assertEquals(1, count);
+//		Assert.assertEquals(1, movieRepository.findAll().spliterator().estimateSize());
 		
 		String newDesc = "Very goold movie";
 		movie.setDescription(newDesc);
 		movie2 = movieRepository.save(movie);
-//		movie2 = movieRepository.findOne(movie.getId());
 		Integer version2 = movie2.getVersion();
-		Assert.assertEquals(newDesc, movie2.getDescription());
+		Assert.assertEquals(newDesc, movie2.getDescription()); 
 		Assert.assertTrue(version2 > version1); 
 		
 		movieRepository.deleteAll();
-		Assert.assertEquals(0, movieRepository.findAll().spliterator().estimateSize());
+		itr = movieRepository.findAll().iterator();
+		count = 0;
+		while(itr.hasNext()){
+			itr.next();
+			count++;
+		}
+		Assert.assertEquals(0, count);
 		
 		
 	}
+	
+	
+	
+	
+	
 	
 }
