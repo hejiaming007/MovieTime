@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- Note that this file is refreshed by the server every 60seconds, as specified 
+	in web.xml -->
+
+<log4j:configuration debug="false">
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- Pattern to output the caller's file name and line number -->
+			<param name="ConversionPattern" value="%d{yy-MM-dd HH:mm:ss,SSS} [%t:%p] (%F:%L) %x %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.jimmystudio"
+		additivity="false">
+		<level value="debug" />
+		<appender-ref ref="stdout" />
+	</logger>
+	
+	<logger name="org.springframework"
+		additivity="false">
+		<level value="debug" />
+		<appender-ref ref="stdout" />
+	</logger>
+	
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="stdout" />
+	</root>
+
+</log4j:configuration>

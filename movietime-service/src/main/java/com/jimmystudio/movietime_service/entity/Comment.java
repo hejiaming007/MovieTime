@@ -2,20 +2,26 @@ package com.jimmystudio.movietime_service.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Comment extends AbstractEntity{
-	
+public class Comment extends AbstractEntity {
+
+	@Column(length=5000)
 	private String content;
-	
+
 	private Date creationDate;
-	
-	@ManyToOne
+
+	@ManyToOne(cascade=CascadeType.REMOVE)
+	@JoinColumn(name = "MOVIE_ID")
 	private Movie movie;
-	
+
 	@ManyToOne
+	@JoinColumn(name = "CREATOR_ID")
 	private User creator;
 
 	public String getContent() {
@@ -49,6 +55,5 @@ public class Comment extends AbstractEntity{
 	public void setMovie(Movie movie) {
 		this.movie = movie;
 	}
-	
-	
+
 }

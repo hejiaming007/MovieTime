@@ -8,14 +8,14 @@
 	<packaging>pom</packaging>
 
 	<name>movietime parent module</name>
-	<url>http://www.jimmystudio.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>7</java.version>
+		<java.version>8</java.version>
 		<spring.version>4.1.0.RELEASE</spring.version>
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<slf4j.version>1.7.5</slf4j.version>
+		<sql.generation.phase>packaging</sql.generation.phase>
 	</properties>
 
 
@@ -150,4 +150,9 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<scm>
+		<url>https://github.com/hejiaming007/MovieTime.git</url>
+		<connection>https://github.com/hejiaming007/MovieTime.git</connection>
+		<developerConnection>hejiaming007</developerConnection>
+	</scm>
 </project>

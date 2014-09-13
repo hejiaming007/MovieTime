@@ -8,9 +8,8 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Group extends AbstractEntity {
 
-	
 	private String name;
-	
+
 	@ManyToMany
 	private List<User> users;
 
@@ -29,6 +28,5 @@ public class Group extends AbstractEntity {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
-	
-	
+
 }
