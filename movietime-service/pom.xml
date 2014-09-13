@@ -9,9 +9,6 @@
 	<artifactId>movietime-service</artifactId>
 	<packaging>jar</packaging>
 	<name>movietime service module</name>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 
 	<dependencies>

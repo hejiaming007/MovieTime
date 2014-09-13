@@ -7,15 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class User extends AbstractEntity{
+public class User extends AbstractEntity {
 
-	
 	private String name;
-	
+
 	private String password;
-	
+
 	private Date registionDate;
-	
+
 	@ManyToMany
 	List<Group> groups;
 
@@ -43,12 +42,12 @@ public class User extends AbstractEntity{
 		this.registionDate = registionDate;
 	}
 
-//	public List<Group> getGroups() {
-//		return groups;
-//	}
-//
-//	public void setGroups(List<Group> groups) {
-//		this.groups = groups;
-//	}
-	
+	public List<Group> getGroups() {
+		return groups;
+	}
+
+	public void setGroups(List<Group> groups) {
+		this.groups = groups;
+	}
+
 }
