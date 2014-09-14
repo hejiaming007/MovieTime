@@ -166,6 +166,8 @@ public class RepositoryTest {
 		Assert.assertEquals(MOVIE_DESCRIPTION_2, movie.getDescription());
 		Assert.assertTrue(version2 > version1);
 
+		
+		
 		// Delete all.
 		movieRepository.deleteAll();
 
@@ -174,6 +176,10 @@ public class RepositoryTest {
 		// Remove movie should not remove user.
 		Assert.assertEquals(2, userRepository.findAll().size());
 
+		// Remove movie should remove related comments
+		Assert.assertEquals(0, commentRepository.count());
+		
+		
 	}
 
 }
