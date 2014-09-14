@@ -8,8 +8,8 @@ import com.jimmystudio.movietime_service.entity.User;
 import com.jimmystudio.movietime_service.entity.UserGroup;
 
 
-public interface UserRepository extends JpaRepository<User, Long> {
-
-//	List<User> findByUserGroupsIn(List<UserGroup> userGroups); 
+public interface UserGroupRepository extends JpaRepository<UserGroup, Long> {
+	
+	List<UserGroup> findByUsersIn(List<User> users);
 	
 }

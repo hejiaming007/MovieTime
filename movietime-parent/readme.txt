@@ -19,3 +19,9 @@ TransactionControl
 Java 8 [OK]
 Git [OK]
 embedded Jetty
+
+
+
+Do not name JPA Entity to below:
+Group
+Order 

@@ -1,17 +1,21 @@
 package com.jimmystudio.movietime_service.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Group extends AbstractEntity {
+public class UserGroup extends AbstractEntity {
 
 	private String name;
 
-	@ManyToMany
-	private List<User> users;
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name="USER_ID")
+	private List<User> users = new ArrayList<User>();
 
 	public String getName() {
 		return name;
@@ -26,7 +30,10 @@ public class Group extends AbstractEntity {
 	}
 
 	public void setUsers(List<User> users) {
-		this.users = users;
+		this.users.clear();
+		if (users != null) {
+			this.users.addAll(users);
+		}
 	}
 
 }

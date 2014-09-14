@@ -33,6 +33,8 @@ public class Movie extends AbstractEntity {
 	 * comments here.
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "MOVIE_ID")
+	// @@JoinColumn should put to parent side.
 	private List<Comment> comments = new ArrayList<Comment>();
 
 	public String getName() {

@@ -4,7 +4,7 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
 import com.jimmystudio.movietime_service.entity.Comment;
-import com.jimmystudio.movietime_service.entity.Group;
+import com.jimmystudio.movietime_service.entity.UserGroup;
 import com.jimmystudio.movietime_service.entity.Movie;
 import com.jimmystudio.movietime_service.entity.User;
 
@@ -25,7 +25,7 @@ public class ExportSchema {
 		configuration.addAnnotatedClass(Comment.class);
 		configuration.addAnnotatedClass(User.class);
 		configuration.addAnnotatedClass(Movie.class);
-		configuration.addAnnotatedClass(Group.class);
+		configuration.addAnnotatedClass(UserGroup.class);
 //		
 //		}
 		

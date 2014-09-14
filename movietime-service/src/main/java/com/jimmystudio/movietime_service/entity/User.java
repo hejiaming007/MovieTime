@@ -1,8 +1,13 @@
 package com.jimmystudio.movietime_service.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class User extends AbstractEntity {
@@ -11,11 +16,11 @@ public class User extends AbstractEntity {
 
 	private String password;
 
-	private Date registionDate;
-//
-//	@ManyToMany
-//	List<Group> groups;
+	private Date registionDate; 
 
+//	@ManyToMany(fetch = FetchType.LAZY)
+//	private List<UserGroup> userGroups = new ArrayList<UserGroup>();
+	
 	public String getName() {
 		return name;
 	}
@@ -40,12 +45,16 @@ public class User extends AbstractEntity {
 		this.registionDate = registionDate;
 	}
 //
-//	public List<Group> getGroups() {
-//		return groups;
+//	public List<UserGroup> getUserGroup() {
+//		return userGroups;
 //	}
 //
-//	public void setGroups(List<Group> groups) {
-//		this.groups = groups;
+//	public void setUserGroup(List<UserGroup> userGroup) {
+//		this.userGroups.clear();
+//		if (userGroup != null) {
+//			this.userGroups.addAll(userGroup);
+//		}
 //	}
+
 
 }
