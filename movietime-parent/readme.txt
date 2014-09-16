@@ -13,10 +13,14 @@ dozer
 jackson
 jax-ws
 apache-cxf
+<<<<<<< HEAD
 Joda Time [OK]
+=======
+>>>>>>> branch 'master' of https://github.com/hejiaming007/MovieTime.git
 Maven (3.1.1) [OK]
 TransactionControl
 Java 8 [OK]
+<<<<<<< HEAD
 Git [OK]
 embedded Jetty
 
@@ -25,3 +29,7 @@ embedded Jetty
 Do not name JPA Entity to below:
 Group
 Order 
+=======
+Git
+embedded Jetty
+>>>>>>> branch 'master' of https://github.com/hejiaming007/MovieTime.git
