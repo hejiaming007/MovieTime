@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
@@ -16,11 +17,12 @@ public class User extends AbstractEntity {
 
 	private String password;
 
-	private Date registionDate; 
+	private Date registionDate;
 
-//	@ManyToMany(fetch = FetchType.LAZY)
-//	private List<UserGroup> userGroups = new ArrayList<UserGroup>();
-	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "UserGroup_User_Mappings", joinColumns = @JoinColumn(name = "User_ID"), inverseJoinColumns = @JoinColumn(name = "UserGroup_ID"))
+	private List<UserGroup> userGroups = new ArrayList<UserGroup>();
+
 	public String getName() {
 		return name;
 	}
@@ -44,17 +46,16 @@ public class User extends AbstractEntity {
 	public void setRegistionDate(Date registionDate) {
 		this.registionDate = registionDate;
 	}
-//
-//	public List<UserGroup> getUserGroup() {
-//		return userGroups;
-//	}
-//
-//	public void setUserGroup(List<UserGroup> userGroup) {
-//		this.userGroups.clear();
-//		if (userGroup != null) {
-//			this.userGroups.addAll(userGroup);
-//		}
-//	}
 
+	public List<UserGroup> getUserGroup() {
+		return userGroups;
+	}
+
+	public void setUserGroup(List<UserGroup> userGroup) {
+		this.userGroups.clear();
+		if (userGroup != null) {
+			this.userGroups.addAll(userGroup);
+		}
+	}
 
 }

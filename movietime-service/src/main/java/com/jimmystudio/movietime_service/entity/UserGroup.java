@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
@@ -14,7 +15,7 @@ public class UserGroup extends AbstractEntity {
 	private String name;
 
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name="USER_ID")
+	@JoinTable(name = "UserGroup_User_Mappings", joinColumns = @JoinColumn(name = "UserGroup_ID"), inverseJoinColumns = @JoinColumn(name = "User_ID"))
 	private List<User> users = new ArrayList<User>();
 
 	public String getName() {

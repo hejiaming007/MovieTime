@@ -12,17 +12,17 @@ import org.hibernate.annotations.Cascade;
 @Entity
 public class Comment extends AbstractEntity {
 
-	@Column(length=5000)
+	@Column(length = 5000)
 	private String content;
 
 	private Date creationDate;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "CREATOR_ID")
 	private User creator;
-	
+
 	@ManyToOne()
-	@JoinColumn(name="MOVIE_ID")
+	@JoinColumn(name = "MOVIE_ID")
 	private Movie movie;
 
 	public String getContent() {
@@ -56,7 +56,5 @@ public class Comment extends AbstractEntity {
 	public void setMovie(Movie movie) {
 		this.movie = movie;
 	}
-	
-	
 
 }

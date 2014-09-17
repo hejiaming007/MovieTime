@@ -12,18 +12,21 @@
 		</layout>
 	</appender>
 
-	<logger name="com.jimmystudio"
-		additivity="false">
+	<logger name="com.jimmystudio" additivity="false">
 		<level value="debug" />
 		<appender-ref ref="stdout" />
 	</logger>
-	
-	<logger name="org.springframework"
-		additivity="false">
+
+	<logger name="org.springframework" additivity="false">
 		<level value="debug" />
 		<appender-ref ref="stdout" />
 	</logger>
-	
+
+	<logger name="log4jdbc.log4j2" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="stdout" />
+	</logger>
+
 
 	<root>
 		<priority value="info" />
