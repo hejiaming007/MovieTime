@@ -33,7 +33,7 @@ import com.jimmystudio.movietime_service.entity.UserGroup;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
 public class RepositoryTest {
-
+ 
 	private static int counter = 0;
 
 	private static final Date MOVIE_CREATION_DATE = new DateTime().plus(
