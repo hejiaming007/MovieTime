@@ -22,10 +22,27 @@
 		<appender-ref ref="stdout" />
 	</logger>
 
-	<logger name="log4jdbc.log4j2" additivity="false">
-		<level value="debug" />
+	<logger name="jdbc.resultsettable" additivity="false">
+		<level value="info" />
 		<appender-ref ref="stdout" />
 	</logger>
+
+	<logger name="jdbc.sqltiming" additivity="false">
+		<level value="off" />
+		<appender-ref ref="stdout" />
+	</logger>
+
+	<logger name="jdbc.sqlonly" additivity="false">
+		<level value="info" />
+		<appender-ref ref="stdout" />
+	</logger>
+
+	<logger name="jdbc.audit" additivity="false">
+		<level value="off" />
+		<appender-ref ref="stdout" />
+	</logger>
+
+
 
 
 	<root>

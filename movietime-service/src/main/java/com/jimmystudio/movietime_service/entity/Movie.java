@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
+@javax.persistence.Table(name = "MOVIE")
 public class Movie extends AbstractEntity {
 
 	private String name;

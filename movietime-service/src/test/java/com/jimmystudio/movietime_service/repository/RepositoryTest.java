@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
+import org.h2.engine.Constants;
 import org.h2.tools.Server;
 import org.joda.time.DateTime;
 import org.junit.After;
@@ -82,18 +83,16 @@ public class RepositoryTest {
 
 	@Before
 	public void setup() throws Exception {
-
-		// Connection conn = transactionManager.getDataSource().getConnection();
-		// Server.startWebServer(conn); //TODO
 		server = Server.createWebServer();
-		server.start();
-		server.openBrowser("http://localhost:8082");
-
+//		server.start();
+//		Server.openBrowser("http://localhost:" + Constants.DEFAULT_HTTP_PORT);
 	}
 
 	@After
 	public void tearDown() {
-		server.stop();
+		if(server.isRunning(true)){
+			server.stop();
+		}
 	}
 
 	@Test

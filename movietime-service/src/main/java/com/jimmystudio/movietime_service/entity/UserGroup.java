@@ -10,6 +10,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
+@javax.persistence.Table(name = "USER_GROUP")
 public class UserGroup extends AbstractEntity {
 
 	private String name;
