@@ -26,6 +26,11 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+		         <groupId>org.reflections</groupId>
+		         <artifactId>reflections</artifactId>
+		         <version>0.9.9-RC1</version>
+		     </dependency>
+			<dependency>
 				<groupId>org.lazyluke</groupId>
 				<artifactId>log4jdbc-remix</artifactId>
 				<version>0.2.7</version>

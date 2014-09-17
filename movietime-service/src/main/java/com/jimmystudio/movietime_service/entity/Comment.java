@@ -7,10 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
 @Entity
-@javax.persistence.Table(name = "COMMENT", indexes = { @Index(name = "COMMENT_MOVIEID_IDX", columnList = "MOVIE_ID") })
+@Table(name = "COMMENT", indexes = { @Index(name = "COMMENT_MOVIEID_IDX", columnList = "MOVIE_ID, CREATOR_ID") })
 public class Comment extends AbstractEntity {
 
 	@Column(length = 5000)

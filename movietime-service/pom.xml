@@ -13,6 +13,10 @@
 
 	<dependencies>
 		<dependency>
+	         <groupId>org.reflections</groupId>
+	         <artifactId>reflections</artifactId>
+	     </dependency>
+		<dependency>
 			<groupId>org.lazyluke</groupId>
 			<artifactId>log4jdbc-remix</artifactId>
 		</dependency>

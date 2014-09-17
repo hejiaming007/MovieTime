@@ -6,12 +6,14 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
-@javax.persistence.Table(name = "USER")
+@Table(name = "USER")
 public class User extends AbstractEntity {
 
 	private String name;
@@ -21,7 +23,7 @@ public class User extends AbstractEntity {
 	private Date registionDate;
 
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "UserGroup_User_Mappings", joinColumns = @JoinColumn(name = "User_ID"), inverseJoinColumns = @JoinColumn(name = "UserGroup_ID"))
+	@JoinTable(name = "UserGroup_User_Mappings", joinColumns = @JoinColumn(name = "User_ID"), inverseJoinColumns = @JoinColumn(name = "UserGroup_ID"), indexes = { @Index(name = "UserGroup_User_Mappings_IDX", columnList = "User_ID, UserGroup_ID") })
 	private List<UserGroup> userGroups = new ArrayList<UserGroup>();
 
 	public String getName() {

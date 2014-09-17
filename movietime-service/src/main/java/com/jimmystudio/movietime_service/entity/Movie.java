@@ -10,9 +10,10 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
-@javax.persistence.Table(name = "MOVIE")
+@Table(name = "MOVIE")
 public class Movie extends AbstractEntity {
 
 	private String name;
@@ -33,7 +34,7 @@ public class Movie extends AbstractEntity {
 	 * Because one movie might has many comments, so we select LAZY load for
 	 * comments here.
 	 */
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE})
 	@JoinColumn(name = "MOVIE_ID")
 	// @@JoinColumn should put to parent side.
 	private List<Comment> comments = new ArrayList<Comment>();
