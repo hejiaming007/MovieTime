@@ -23,8 +23,10 @@ Java 8 [OK]
 <<<<<<< HEAD
 Git [OK]
 embedded Jetty
-
-
+Spring Boot [Ok]
+	health check
+	spring bean report
+	JMX end-points
 
 Do not name JPA Entity to below:
 Group
