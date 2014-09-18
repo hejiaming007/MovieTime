@@ -5,12 +5,11 @@
 		<groupId>com.jimmystudio</groupId>
 		<artifactId>movietime-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../movietime-parent</relativePath>
 	</parent>
 	<artifactId>movietime-service</artifactId>
 	<packaging>jar</packaging>
 	<name>movietime service module</name>
-
-
 	<dependencies>
 		<dependency>
 	         <groupId>org.reflections</groupId>
@@ -97,18 +96,4 @@
 			<artifactId>joda-time</artifactId>
 		</dependency>
 	</dependencies>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
