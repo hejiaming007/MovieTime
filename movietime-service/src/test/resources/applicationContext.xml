@@ -63,10 +63,10 @@
 		</property>
 	</bean>
 
-	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
+<!-- 	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
 		id="transactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
+	</bean> -->
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
@@ -74,7 +74,7 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 		id="entityManagerFactory">
 		<property name="persistenceUnitName" value="persistenceUnit" />
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="dataSourceSpied" />
 	</bean>
 
 

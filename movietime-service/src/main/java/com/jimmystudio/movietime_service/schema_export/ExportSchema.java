@@ -11,7 +11,7 @@ import com.jimmystudio.movietime_service.entity.AbstractEntity;
 
 public class ExportSchema {
 
-	public static void main(String[] args) {
+	public void export() {
 		Configuration configuration = new Configuration();
 
 		configuration.setProperty(Environment.DIALECT,
