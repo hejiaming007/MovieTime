@@ -13,7 +13,6 @@ dozer
 jackson
 jax-ws
 apache-cxf
-<<<<<<< HEAD
 Joda Time [OK]
 =======
 >>>>>>> branch 'master' of https://github.com/hejiaming007/MovieTime.git
